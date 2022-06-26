@@ -1,5 +1,6 @@
-FROM node:14-alpine
+FROM alpine
 
+RUN apk add --update nodejs npm
 RUN npm install -g @mockoon/cli@2.0.0
 COPY mockoon-mock-food.json ./mockoon-mock-food.json
 
