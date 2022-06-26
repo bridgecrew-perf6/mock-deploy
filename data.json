@@ -1,0 +1,731 @@
+{
+  "uuid": "4527865f-8f78-4260-b420-78c6be31dd14",
+  "lastMigration": 20,
+  "name": "Mock-food",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "127.0.0.1",
+  "routes": [
+    {
+      "uuid": "bab56990-54d3-44be-b331-396d11acefe6",
+      "documentation": "Login Page",
+      "method": "post",
+      "endpoint": "api/login",
+      "responses": [
+        {
+          "uuid": "d6759d95-6915-4920-850c-73751dccbcd1",
+          "body": "{\n  \"meta\": {\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Authenticated\"\n  },\n  \"data\": {\n    \"access_token\": \"5|QGnwvs3Jz7RWQrbtgKxr7KKxp3MvdSCIfLqa3wyy\",\n    \"token_type\": \"Bearer\",\n    \"user\": {\n      \"id\": 8,\n      \"name\": \"Jennie Kim\",\n      \"email\": \"jennie.kim@blackpink.co\",\n      \"email_verified_at\": null,\n      \"roles\": \"USER\",\n      \"current_team_id\": null,\n      \"picturePath\": null,\n      \"address\": \"Jalan Jenderal Sudirman\",\n      \"houseNumber\": \"1234\",\n      \"phoneNumber\": \"08123456789\",\n      \"city\": \"Bandung\",\n      \"created_at\": \"2020-09-18T11:51:44.000000Z\",\n      \"updated_at\": \"2020-09-18T11:51:44.000000Z\",\n      \"profile_photo_url\": \"https://ui-avatars.com/api/?name=Jennie+Kim&color=7F9CF5&background=EBF4FF\"\n    }\n  }\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "email",
+              "value": "jennie.kim@blackpink.com",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "12345678",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "d56e424a-0e83-4b52-9f91-abe4fe2b33cc",
+          "body": "{\n  \"meta\": {\n    \"code\": 400,\n    \"status\": \"failed\",\n    \"message\": \"Bad Request\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "email",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "",
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "046a9725-0d1f-4cb3-95e6-1704084c8483",
+          "body": "{\n  \"meta\": {\n    \"code\": 401,\n    \"status\": \"failed\",\n    \"message\": \"Unauthoorized\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "ba14c90f-1da9-489b-8112-3773627255b8",
+      "documentation": "Register Page",
+      "method": "post",
+      "endpoint": "api/register",
+      "responses": [
+        {
+          "uuid": "3fbfb007-7d04-4454-a30b-b42a4412e53f",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"User Registered\"\r\n  },\r\n  \"data\": {\r\n    \"access_token\": \"4|Akd99dZcP3Ef8eRpzNitjqK0C29gjxn50Nuz4fbK\",\r\n    \"token_type\": \"Bearer\",\r\n    \"user\": {\r\n      \"id\": 8,\r\n      \"name\": \"Jennie Kim\",\r\n      \"email\": \"jennie.kim@blackpink.co\",\r\n      \"email_verified_at\": null,\r\n      \"roles\": \"USER\",\r\n      \"current_team_id\": null,\r\n      \"picturePath\": null,\r\n      \"address\": \"Jalan Jenderal Sudirman\",\r\n      \"houseNumber\": \"1234\",\r\n      \"phoneNumber\": \"08123456789\",\r\n      \"city\": \"Bandung\",\r\n      \"created_at\": \"2020-09-18T11:51:44.000000Z\",\r\n      \"updated_at\": \"2020-09-18T11:51:44.000000Z\",\r\n      \"profile_photo_url\": \"https://ui-avatars.com/api/?name=Jennie+Kim&color=7F9CF5&background=EBF4FF\"\r\n    }\r\n  }\r\n}",
+          "latency": 0,
+          "statusCode": 201,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        },
+        {
+          "uuid": "7dc87705-178e-42e2-95b3-05beb972f3fb",
+          "body": "{\n  \"meta\": {\n    \"code\": 400,\n    \"status\": \"failed\",\n    \"message\": \"Bad Request\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "email",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "password",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "password_confirmation",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "houseNumber",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "city",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "houseNumber",
+              "value": "",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "phoneNumber",
+              "value": "",
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "25e4aadc-8f77-4133-b3d5-ab416e1b0bec",
+      "documentation": "User logout",
+      "method": "get",
+      "endpoint": "api/logout",
+      "responses": [
+        {
+          "uuid": "4cde21c7-dd0b-40e2-babb-735b1e12d3a7",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"Token Revoked\"\r\n  },\r\n  \"data\": true\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "5|QGnwvs3Jz7RWQrbtgKxr7KKxp3MvdSCIfLqa3wyy"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "400c4833-d565-4144-b2ba-a3bdfc2e9737",
+      "documentation": "Upload user profile",
+      "method": "post",
+      "endpoint": "api/user/photo",
+      "responses": [
+        {
+          "uuid": "1af05ba3-378c-47a2-8cfe-cfd8943399e8",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"File successfully uploaded\"\r\n  },\r\n  \"data\": [\r\n    \"{{faker 'image.food'}}\"\r\n  ]\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer 11|tFp7fyyTbgjMeod9osi1yjxYPfCIbE2spyph27rE"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "file",
+              "value": "example",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "fae91642-ebc9-4782-9ff2-c1bf66de54ed",
+          "body": "{\n  \"meta\": {\n    \"code\": 400,\n    \"status\": \"failed\",\n    \"message\": \"Bad Request\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "file",
+              "value": "null",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "a02a4b4d-3978-4bc1-a7ba-911d61922a29",
+      "documentation": "Edit user profile",
+      "method": "post",
+      "endpoint": "api/updateProfile",
+      "responses": [
+        {
+          "uuid": "1d7b9ccf-f9c2-44f3-90f5-53569c500a2e",
+          "body": "{\n  \"meta\": {\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Profile Updated\"\n  },\n  \"data\": {\n    \"id\": 8,\n    \"name\": \"{{body 'name'}}\",\n    \"email\": \"{{body 'email'}}\",\n    \"email_verified_at\": null,\n    \"roles\": \"ADMIN\",\n    \"current_team_id\": null,\n    \"address\": \"{{body 'address'}}\",\n    \"houseNumber\": \"{{body 'houseNumber'}}\",\n    \"phoneNumber\": \"{{body 'phoneNumber'}}\",\n    \"city\": \"{{body 'city'}}\",\n    \"created_at\": 1600429904,\n    \"updated_at\": 1600775365,\n    \"profile_photo_path\": \"assets/user/ATanl6hpJ0TjWOGQg06VhFQkwgqszk3S1TTIxQVe.png\",\n    \"profile_photo_url\": \"http://foodmarket-backend.test/storage/assets/user/ATanl6hpJ0TjWOGQg06VhFQkwgqszk3S1TTIxQVe.png\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "Jennie Kim",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "email",
+              "value": "jennie.kim@blackpink.com",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "address",
+              "value": "Jalan Jenderal Sudirman",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "city",
+              "value": "Bandung",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "houseNumber",
+              "value": "1234",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "phoneNumber",
+              "value": "08123456789",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "c037d1c7-bc30-41ce-b270-4c51a6dc8865",
+          "body": "{\n  \"meta\": {\n    \"code\": 400,\n    \"status\": \"failed\",\n    \"message\": \"Bad Request\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "If the one property is null",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "name",
+              "value": "Jennie Kim",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "email",
+              "value": "jennie.kim@blackpink.com",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "address",
+              "value": "Jalan Jenderal Sudirman",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "city",
+              "value": "Bandung",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "houseNumber",
+              "value": "1234",
+              "operator": "null"
+            },
+            {
+              "target": "body",
+              "modifier": "phoneNumber",
+              "value": "08123456789",
+              "operator": "null"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "5095c4c3-693d-4c3c-8101-d9b61dedea8b",
+          "body": "{\n  \"meta\": {\n    \"code\": 406,\n    \"status\": \"failed\",\n    \"message\": \"Not Accaptable\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 406,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer 11|tFp7fyyTbgjMeod9osi1yjxYPfCIbE2spyph27rE"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "1067c8f6-b7ca-4ec4-9a09-a96cdf6963c7",
+      "documentation": "Get user account",
+      "method": "get",
+      "endpoint": "api/user",
+      "responses": [
+        {
+          "uuid": "084440b4-4159-4c2f-8376-8fcec68fdb92",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"Data profile user berhasil diambil\"\r\n  },\r\n  \"data\": {\r\n    \"id\": 8,\r\n    \"name\": \"Jennie Kim\",\r\n    \"email\": \"jennie.kim@blackpink.co\",\r\n    \"email_verified_at\": null,\r\n    \"roles\": \"USER\",\r\n    \"current_team_id\": null,\r\n    \"picturePath\": null,\r\n    \"address\": \"Jalan Jenderal Sudirman\",\r\n    \"houseNumber\": \"1234\",\r\n    \"phoneNumber\": \"08123456789\",\r\n    \"city\": \"Bandung\",\r\n    \"created_at\": \"2020-09-18T11:51:44.000000Z\",\r\n    \"updated_at\": \"2020-09-18T11:51:44.000000Z\",\r\n    \"profile_photo_url\": \"https://ui-avatars.com/api/?name=Jennie+Kim&color=7F9CF5&background=EBF4FF\"\r\n  }\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer 6|Ng7pKwWjWEwHYNJC9kyA1aHJpL9IrOu4ALsGw4Ow"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "db2464b7-563d-4ab3-a6a7-a79c7977d579",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/food",
+      "responses": [
+        {
+          "uuid": "e475aa46-f6e4-431a-a683-958d23ee0645",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"Data list produk berhasil diambil\"\r\n  },\r\n  \"data\": \r\n    {\r\n      \"current_page\": 1,\r\n      \"data\": [\r\n        {{#repeat (queryParam 'total' '6')}}\r\n        {\r\n          \"id\": {{@index}},\r\n          \"picturePath\": \"{{faker 'image.food'}}\",\r\n          \"name\": \"{{faker 'lorem.sentence' 3}}\",\r\n          \"description\": \"{{faker 'lorem.sentences'}}\",\r\n          \"ingredients\": \"Bawang Merah, Paprika, Bawang Bombay, Timun\",\r\n          \"price\": 150000,\r\n          \"rate\": 4.2,\r\n          \"types\": \"recommended,popular\",\r\n          \"deleted_at\": null,\r\n          \"created_at\": \"2020-09-17T13:43:54.000000Z\",\r\n          \"updated_at\": \"2020-09-17T13:43:54.000000Z\"\r\n        },\r\n        {{/repeat}}\r\n      ],\r\n      \"first_page_url\": \"http://foodmarket-backend.test/api/food?page=1\",\r\n      \"from\": 1,\r\n      \"last_page\": 1,\r\n      \"last_page_url\": \"http://foodmarket-backend.test/api/food?page=1\",\r\n      \"links\": [\r\n        {\r\n          \"url\": null,\r\n          \"label\": \"Previous\",\r\n          \"active\": false\r\n        },\r\n        {\r\n          \"url\": \"http://foodmarket-backend.test/api/food?page=1\",\r\n          \"label\": 1,\r\n          \"active\": true\r\n        },\r\n        {\r\n          \"url\": null,\r\n          \"label\": \"Next\",\r\n          \"active\": false\r\n        }\r\n      ],\r\n      \"next_page_url\": null,\r\n      \"path\": \"http://foodmarket-backend.test/api/food\",\r\n      \"per_page\": 6,\r\n      \"prev_page_url\": null,\r\n      \"to\": 1,\r\n      \"total\": 1\r\n    }\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "3cf25f2b-410d-45a8-8542-3ac636b4c5ee",
+      "documentation": "Get data food",
+      "method": "get",
+      "endpoint": "api/transaction",
+      "responses": [
+        {
+          "uuid": "7d8479d9-495b-49e6-ab38-d86b405e4dbd",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"Data list transaksi berhasil diambil\"\r\n  },\r\n  \"data\": {\r\n    \"current_page\": 1,\r\n    \"data\": [\r\n      {\r\n        \"id\": 1,\r\n        \"food_id\": 1,\r\n        \"user_id\": 1,\r\n        \"quantity\": 1,\r\n        \"total\": 100000,\r\n        \"status\": \"DELIVERED\",\r\n        \"payment_url\": \"https://app.sandbox.midtrans.com/snap/v2/vtweb/bcd3e4b7-6d01-435c-88ab-b3da45b9c66a#/select-payment\",\r\n        \"deleted_at\": null,\r\n        \"created_at\": \"2020-09-18T18:18:23.000000Z\",\r\n        \"updated_at\": \"2020-09-18T18:18:23.000000Z\",\r\n        \"food\": {\r\n          \"id\": 1,\r\n          \"picturePath\": \"https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg\",\r\n          \"name\": \"Sate Sayur Sultan\",\r\n          \"description\": \"Sate Sayur Sultan adalah menu sate vegan paling terkenal di Bandung. Sate ini dibuat dari berbagai macam bahan bermutu tinggi. Semua bahan ditanam dengan menggunakan teknologi masa kini sehingga memiliki nutrisi yang kaya.\",\r\n          \"ingredients\": \"Bawang Merah, Paprika, Bawang Bombay, Timun\",\r\n          \"price\": 150000,\r\n          \"rate\": 4.2,\r\n          \"types\": \"recommended,popular\",\r\n          \"deleted_at\": null,\r\n          \"created_at\": \"2020-09-17T13:43:54.000000Z\",\r\n          \"updated_at\": \"2020-09-17T13:43:54.000000Z\"\r\n        },\r\n        \"user\": {\r\n          \"id\": 1,\r\n          \"name\": \"Galih Pratama\",\r\n          \"email\": \"hanamura.iost@gmail.com\",\r\n          \"email_verified_at\": null,\r\n          \"roles\": \"USER\",\r\n          \"current_team_id\": null,\r\n          \"picturePath\": null,\r\n          \"address\": null,\r\n          \"houseNumber\": null,\r\n          \"phoneNumber\": null,\r\n          \"city\": null,\r\n          \"created_at\": \"2020-09-17T06:05:01.000000Z\",\r\n          \"updated_at\": \"2020-09-17T06:05:01.000000Z\",\r\n          \"profile_photo_url\": \"https://ui-avatars.com/api/?name=Galih+Pratama&color=7F9CF5&background=EBF4FF\"\r\n        }\r\n      }\r\n    ],\r\n    \"first_page_url\": \"http://foodmarket-backend.test/api/transaction?page=1\",\r\n    \"from\": 1,\r\n    \"last_page\": 1,\r\n    \"last_page_url\": \"http://foodmarket-backend.test/api/transaction?page=1\",\r\n    \"links\": [\r\n      {\r\n        \"url\": null,\r\n        \"label\": \"Previous\",\r\n        \"active\": false\r\n      },\r\n      {\r\n        \"url\": \"http://foodmarket-backend.test/api/transaction?page=1\",\r\n        \"label\": 1,\r\n        \"active\": true\r\n      },\r\n      {\r\n        \"url\": null,\r\n        \"label\": \"Next\",\r\n        \"active\": false\r\n      }\r\n    ],\r\n    \"next_page_url\": null,\r\n    \"path\": \"http://foodmarket-backend.test/api/transaction\",\r\n    \"per_page\": 6,\r\n    \"prev_page_url\": null,\r\n    \"to\": 1,\r\n    \"total\": 1\r\n  }\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer 6|Ng7pKwWjWEwHYNJC9kyA1aHJpL9IrOu4ALsGw4Ow"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "388e063e-8c8d-46d5-859e-0c6760419421",
+      "documentation": "Transaction update",
+      "method": "post",
+      "endpoint": "api/transaction/1",
+      "responses": [
+        {
+          "uuid": "2c3712d7-7746-4b35-9912-6fd4658709e9",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"Transaksi berhasil diperbarui\"\r\n  },\r\n  \"data\": {\r\n    \"id\": 1,\r\n    \"food_id\": 1,\r\n    \"user_id\": 1,\r\n    \"quantity\": 1,\r\n    \"total\": 100000,\r\n    \"status\": \"DELIVERED\",\r\n    \"payment_url\": \"https://app.sandbox.midtrans.com/snap/v2/vtweb/bcd3e4b7-6d01-435c-88ab-b3da45b9c66a#/select-payment\",\r\n    \"deleted_at\": null,\r\n    \"created_at\": 1600453103,\r\n    \"updated_at\": 1600863723\r\n  }\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer 11|tFp7fyyTbgjMeod9osi1yjxYPfCIbE2spyph27rE"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "status",
+              "value": "DELIVERED",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "66c52ee5-43b8-4e48-8ce5-1a152d804f65",
+          "body": "{\n  \"meta\": {\n    \"code\": 400,\n    \"message\": \"Bad Request\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "status",
+              "value": "null",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "56b5a1c4-d537-419e-84db-024b2ef74076",
+          "body": "{\n  \"meta\": {\n    \"code\": 401,\n    \"message\": \"Unauthoorized\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "",
+              "value": "",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "93d52f17-48ba-4fb8-81a4-90ab9b82c6ef",
+      "documentation": "Checkout",
+      "method": "post",
+      "endpoint": "api/checkout",
+      "responses": [
+        {
+          "uuid": "0e2c7beb-09ef-443c-9b3b-a9179471dd84",
+          "body": "{\r\n  \"meta\": {\r\n    \"code\": 200,\r\n    \"status\": \"success\",\r\n    \"message\": \"Transaksi berhasil\"\r\n  },\r\n  \"data\": {\r\n    \"id\": 5,\r\n    \"food_id\": 1,\r\n    \"user_id\": 1,\r\n    \"quantity\": 1,\r\n    \"total\": 200,\r\n    \"status\": \"PENDING\",\r\n    \"payment_url\": \"https://app.sandbox.midtrans.com/snap/v2/vtweb/0feb4251-37d0-42b0-bea8-9147f75d29d9\",\r\n    \"deleted_at\": null,\r\n    \"created_at\": \"2020-09-20T10:55:12.000000Z\",\r\n    \"updated_at\": \"2020-09-20T10:55:12.000000Z\",\r\n    \"food\": {\r\n      \"id\": 1,\r\n      \"picturePath\": \"https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg\",\r\n      \"name\": \"Sate Sayur Sultan\",\r\n      \"description\": \"Sate Sayur Sultan adalah menu sate vegan paling terkenal di Bandung. Sate ini dibuat dari berbagai macam bahan bermutu tinggi. Semua bahan ditanam dengan menggunakan teknologi masa kini sehingga memiliki nutrisi yang kaya.\",\r\n      \"ingredients\": \"Bawang Merah, Paprika, Bawang Bombay, Timun\",\r\n      \"price\": 150000,\r\n      \"rate\": 4.2,\r\n      \"types\": \"recommended,popular\",\r\n      \"deleted_at\": null,\r\n      \"created_at\": \"2020-09-17T13:43:54.000000Z\",\r\n      \"updated_at\": \"2020-09-17T13:43:54.000000Z\"\r\n    },\r\n    \"user\": {\r\n      \"id\": 1,\r\n      \"name\": \"Galih Pratama\",\r\n      \"email\": \"hanamura.iost@gmail.com\",\r\n      \"email_verified_at\": null,\r\n      \"roles\": \"USER\",\r\n      \"current_team_id\": null,\r\n      \"picturePath\": null,\r\n      \"address\": null,\r\n      \"houseNumber\": null,\r\n      \"phoneNumber\": null,\r\n      \"city\": null,\r\n      \"created_at\": \"2020-09-17T06:05:01.000000Z\",\r\n      \"updated_at\": \"2020-09-17T06:05:01.000000Z\",\r\n      \"profile_photo_url\": \"https://ui-avatars.com/api/?name=Galih+Pratama&color=7F9CF5&background=EBF4FF\"\r\n    }\r\n  }\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [
+            {
+              "key": "Accept",
+              "value": "application/json"
+            },
+            {
+              "key": "Authorization",
+              "value": "Bearer 11|tFp7fyyTbgjMeod9osi1yjxYPfCIbE2spyph27rE"
+            }
+          ],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "food_id",
+              "value": "3",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "quantity",
+              "value": "7",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "total",
+              "value": "999000",
+              "operator": "equals"
+            },
+            {
+              "target": "body",
+              "modifier": "status",
+              "value": "CANCELLED",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "AND",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "2d9a480d-fac3-4e39-95b6-78f4ee37d05b",
+          "body": "{\n  \"meta\": {\n    \"code\": 400,\n    \"message\": \"Bad Request\"\n  },\n}\n\n",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "status",
+              "value": "null",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
+        },
+        {
+          "uuid": "f98ae617-9699-4126-9da2-7aa56124a6c4",
+          "body": "{\n  \"meta\": {\n    \"code\": 401,\n    \"message\": \"Unauthorized\"\n  },\n}",
+          "latency": 0,
+          "statusCode": 401,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
