@@ -14,6 +14,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '14.x'
+          check-latest: true
       - name: NPM install, build and test
         run: |
           npm ci
@@ -21,4 +22,4 @@ jobs:
 #         If mockoon-cli is not a devDependency:
           npm install -D mockoon-cli
           npx mockoon-cli start --data https://domain.com/data.json --port 3001
-          npm run test
+          # npm run test
